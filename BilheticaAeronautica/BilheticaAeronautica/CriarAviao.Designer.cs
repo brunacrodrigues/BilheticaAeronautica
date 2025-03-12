@@ -28,12 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "CriarAviao";
+            components = new System.ComponentModel.Container();
+            borderLayout1 = new Syncfusion.Windows.Forms.Tools.BorderLayout(components);
+            ((System.ComponentModel.ISupportInitialize)borderLayout1).BeginInit();
+            SuspendLayout();
+            // 
+            // borderLayout1
+            // 
+            borderLayout1.HGap = 0;
+            borderLayout1.VGap = 0;
+            // 
+            // CriarAviao
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1231, 748);
+            Name = "CriarAviao";
+            Text = "CriarAviao";
+            WindowState = FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)borderLayout1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Syncfusion.Windows.Forms.Tools.BorderLayout borderLayout1;
     }
 }
