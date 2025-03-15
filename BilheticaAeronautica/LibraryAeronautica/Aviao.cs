@@ -28,7 +28,7 @@ namespace LibraryAeronautica
         public bool Estado { get; set; }
 
         /// <summary>
-        /// Os luagres do avião.
+        /// Os lugares do avião.
         /// </summary>
         public List<Lugar> Lugares { get; set; }
 
@@ -49,6 +49,75 @@ namespace LibraryAeronautica
                 }
             }
         }
+
+        public int FilasExecutivas { get; set; }
+        public int FilasEconomicas { get; set; }
+        public int LugaresPorFila { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Marca} {Modelo}";
+        }
+
+        /// <summary>
+        /// Gera os lugares no avião com base no número de filas executivas, filas económicas e lugares em cada fila.
+        /// </summary>
+        /// <param name="filasExecutivas"></param>
+        /// <param name="filasEconomicas"></param>
+        /// <param name="lugaresPorFila"></param>
+        public void GerarLugares()
+        {
+            Lugares = new List<Lugar>();
+            const string letrasLugares = "ABCDEFGHIJ"; //Máximo 10 lugares por fila
+
+            // Gerar os lugares para as filas executivas
+            for (int fila = 1; fila <= FilasExecutivas; fila++)
+            {
+                for (int lugar = 0; lugar < LugaresPorFila; lugar++)
+                {
+                    Lugar novoLugar = new Lugar
+                    {
+                        Fila = fila.ToString(),
+                        Letra = letrasLugares[lugar].ToString(),
+                        Tipo = TipoLugar.Executivo,
+                        Disponivel = true,
+                    };
+
+                    Lugares.Add(novoLugar);
+                }
+            }            
+
+            // Gerar os lugares para as filas económicas
+            for (int fila = FilasExecutivas + 1; fila <= FilasExecutivas + FilasEconomicas; fila++)
+            {
+                for (int lugar = 0; lugar < LugaresPorFila; lugar ++)
+                {
+                    Lugar novoLugar = new Lugar
+                    {
+                        Fila = fila.ToString(),
+                        Letra = letrasLugares[lugar].ToString(),
+                        Tipo = TipoLugar.Economico,
+                        Disponivel = true,
+                    };
+
+                    Lugares.Add(novoLugar);
+                }
+            }
+        }
+
+        public string GerarEstado()
+        {
+            if (Estado)
+            {
+                return $"Ativo";
+            }
+            else
+            {
+                return $"Inativo";
+            }
+        }
+
         
+
     }
 }

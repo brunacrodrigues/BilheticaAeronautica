@@ -6,7 +6,11 @@
     public class Aeroporto
     {
         /// <summary>
-        /// O código do aeroporto (ex: Lisboa).
+        /// O identificador único do aeroporto.
+        /// </summary>
+        public  int Id { get; set; }
+        /// <summary>
+        /// O código do aeroporto (ex: LIS para Lisboa).
         /// </summary>
         public string IATA { get; set; }
 
@@ -24,5 +28,10 @@
         /// O país onde o aeroporto está localizado.
         /// </summary>
         public string Pais { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Id}. {IATA} >> {Nome} >> {Cidade}, {Pais}";
+        }
     }
 }
