@@ -269,6 +269,7 @@
             checkBoxEstado.TabIndex = 22;
             checkBoxEstado.Text = "none";
             checkBoxEstado.UseVisualStyleBackColor = true;
+            
             // 
             // FormEditarAviao
             // 

@@ -34,21 +34,22 @@ namespace BilheticaAeronautica
                 _aviao.FilasEconomicas = (int)comboBoxFilasEconomicas.SelectedItem;
                 _aviao.LugaresPorFila = (int)comboBoxLugaresPorFila.SelectedItem;
                 _aviao.GerarLugares();
-                
-                if (!_aviao.Estado)
+
+                if (checkBoxEstado.Checked)
                 {
-                    if (checkBoxEstado.Checked)
-                    {
+                    if (!_aviao.Estado)
+                    {                                             
                         _aviao.Estado = true;
                         _aviao.GerarEstado();
+                        
                     }
+                    else
+                    {
+                        _aviao.Estado = false;
+                        _aviao.GerarEstado();
+                    } 
                 }
-                else
-                {
-                    _aviao.Estado = false;
-                    _aviao.GerarEstado();
-                }
-                
+
 
                 _frm.PreencherGridView();
 
@@ -57,17 +58,10 @@ namespace BilheticaAeronautica
                 this.Close();
             }
         }
-        
+
         private void VerificarEstado()
         {
-            if (!_aviao.Estado)
-            {
-                checkBoxEstado.Text = "Ativar";
-            }
-            else
-            {
-                checkBoxEstado.Text = "Desativar";
-            }
+            checkBoxEstado.Text = _aviao.Estado ? "Desativar" : "Ativar";
         }
 
         private void InitForm()
@@ -126,5 +120,11 @@ namespace BilheticaAeronautica
             return soma;
         }
 
+        //private void checkBoxEstado_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    _aviao.Estado = checkBoxEstado.Checked;
+        //    _aviao.GerarEstado();
+        //    VerificarEstado();
+        //}
     }
 }
