@@ -1,4 +1,5 @@
-﻿using LibraryAeronautica;
+﻿using LibraryAeronautica.Modelos;
+using LibraryAeronautica.Servicos;
 using System.Net.Http.Headers;
 
 namespace BilheticaAeronautica
@@ -6,14 +7,14 @@ namespace BilheticaAeronautica
     public partial class FormAdicionarAviao : Form
     {
         List<Aviao> Avioes;
-        public List<int> FilasExecutivas { get; set; } = new List<int>();
-        public List<int> FilasEconomicas { get; set; } = new List<int>();
-        public List<int> LugaresPorFila { get; set; } = new List<int>();
+        public List<int> FilasExecutivas { get; set; } 
+        public List<int> FilasEconomicas { get; set; }
+        public List<int> LugaresPorFila { get; set; }
 
-        public FormAdicionarAviao()
+        public FormAdicionarAviao(List<Aviao> avioes)
         {
             InitializeComponent();
-            Avioes = new List<Aviao>();
+            Avioes = avioes;
             InitForm();
         }
 
@@ -25,8 +26,7 @@ namespace BilheticaAeronautica
             {
                 novoAviao = new Aviao
                 {
-                    Id = Avioes.Count + 1,
-                    Marca = txtMarca.Text,
+                    Id = Avioes.Any() ? Avioes.Max(c => c.Id) + 1 : 1,
                     Modelo = txtModelo.Text,
                     Estado = true,
                     FilasExecutivas = (int)comboBoxFilasExecutivas.SelectedItem,
@@ -37,7 +37,7 @@ namespace BilheticaAeronautica
                 //novoAviao.GerarLugares((int)comboBoxFilasExecutivas.SelectedItem,
                 //    (int)comboBoxFilasEconomicas.SelectedItem,
                 //    (int)comboBoxLugaresPorFila.SelectedItem);
-                novoAviao.GerarLugares();
+                GerarService.GerarLugaresAviao(novoAviao);
 
 
                 Avioes.Add(novoAviao);
@@ -54,7 +54,6 @@ namespace BilheticaAeronautica
 
         private void LimparCampos()
         {
-            txtMarca.Text = string.Empty;
             txtModelo.Text = string.Empty;
             txtCapacidade.Text = string.Empty;
 
@@ -77,11 +76,10 @@ namespace BilheticaAeronautica
         public void PreencherGridView()
         {
             gridViewModelos.Columns.Clear();
-            gridViewModelos.Rows.Clear();
+            gridViewModelos.Rows.Clear();            
 
             gridViewModelos.Columns.Add("colId", "ID");
             gridViewModelos.Columns.Add("colModelo", "Modelo");
-            gridViewModelos.Columns.Add("colMarca", "Marca");
             gridViewModelos.Columns.Add("colCapacidade", "Capacidade");
             gridViewModelos.Columns.Add("colEstado", "Estado");
 
@@ -95,9 +93,8 @@ namespace BilheticaAeronautica
 
                 gridViewModelos.Rows[linha].Cells[0].Value = aviao.Id;
                 gridViewModelos.Rows[linha].Cells[1].Value = aviao.Modelo;
-                gridViewModelos.Rows[linha].Cells[2].Value = aviao.Marca;
-                gridViewModelos.Rows[linha].Cells[3].Value = aviao.Capacidade;
-                gridViewModelos.Rows[linha].Cells[4].Value = aviao.GerarEstado();
+                gridViewModelos.Rows[linha].Cells[2].Value = aviao.Lugares.Count;
+                gridViewModelos.Rows[linha].Cells[3].Value = aviao.GerarEstado();
                 linha++;
             }
 
@@ -114,41 +111,14 @@ namespace BilheticaAeronautica
                     gridViewModelos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
             }
+
+            gridViewModelos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        //private bool ValidarLugares()
-        //{
-        //    bool output = true;
-
-        //    if (numFilasExecutivas.Value <= 0 || numFilasExecutivas.Value > 10)
-        //    {
-        //        MessageBox.Show("O número de filas executivas deve ser entre 1 e 10.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        output = false;
-        //    }
-
-        //    if (numFilasEconomicas.Value <= 0 || numFilasEconomicas.Value > 50)
-        //    {
-        //        MessageBox.Show("O número de filas económicas deve ser entre 1 e 50.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        output = false;
-        //    }
-
-        //    if (numLugaresPorFila.Value < 6 || numLugaresPorFila.Value > 10)
-        //    {
-        //        MessageBox.Show("O número de lugares por fila deve ser entre 6 e 10.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        output = false;
-        //    }
-
-        //    return output;
-        //}
+        
         private bool ValidarForm()
         {
             bool output = true;
-
-            if (string.IsNullOrEmpty(txtMarca.Text))
-            {
-                MessageBox.Show("Insira a marca do avião.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                output = false;
-            }
 
             if (string.IsNullOrEmpty(txtModelo.Text))
             {
@@ -167,6 +137,9 @@ namespace BilheticaAeronautica
 
         private void PreencherComboBoxes()
         {
+            FilasExecutivas = new List<int>();
+            FilasEconomicas = new List<int>();
+            LugaresPorFila  = new List<int>();
 
             for (int i = 1; i <= 10; i++)
             {
@@ -226,11 +199,10 @@ namespace BilheticaAeronautica
         }
 
         private void InitForm()
-        {
-            lblId.Text = (Avioes.Count + 1).ToString();
+        {            
+            lblId.Text = (Avioes.Any() ? Avioes.Max(c => c.Id) + 1 : 1).ToString();
             PreencherGridView();
-            PreencherComboBoxes();
-            gridViewModelos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            PreencherComboBoxes();            
         }
 
         private void btnApagar_Click(object sender, EventArgs e)

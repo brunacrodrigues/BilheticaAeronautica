@@ -32,9 +32,7 @@
             borderLayout1 = new Syncfusion.Windows.Forms.Tools.BorderLayout(components);
             gradientLabel1 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             lblId = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            gradientLabel2 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             contextMenuStripEx1 = new Syncfusion.Windows.Forms.Tools.ContextMenuStripEx();
-            txtMarca = new Syncfusion.Windows.Forms.Grid.GridAwareTextBox();
             txtModelo = new Syncfusion.Windows.Forms.Grid.GridAwareTextBox();
             gradientLabel3 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             gradientLabel4 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
@@ -82,18 +80,6 @@
             lblId.TabIndex = 1;
             lblId.Text = "<none>";
             // 
-            // gradientLabel2
-            // 
-            gradientLabel2.BeforeTouchSize = new Size(129, 49);
-            gradientLabel2.BorderSides = Border3DSide.Left | Border3DSide.Top | Border3DSide.Right | Border3DSide.Bottom;
-            gradientLabel2.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gradientLabel2.Location = new Point(151, 181);
-            gradientLabel2.Name = "gradientLabel2";
-            gradientLabel2.Size = new Size(129, 49);
-            gradientLabel2.TabIndex = 2;
-            gradientLabel2.Text = "Marca";
-            gradientLabel2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // contextMenuStripEx1
             // 
             contextMenuStripEx1.ImageScalingSize = new Size(20, 20);
@@ -101,22 +87,12 @@
             contextMenuStripEx1.Name = "contextMenuStripEx1";
             contextMenuStripEx1.Size = new Size(61, 4);
             // 
-            // txtMarca
-            // 
-            txtMarca.AutoSuggestFormula = false;
-            txtMarca.DisabledBackColor = SystemColors.Window;
-            txtMarca.EnabledBackColor = SystemColors.Window;
-            txtMarca.Location = new Point(296, 186);
-            txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(224, 38);
-            txtMarca.TabIndex = 3;
-            // 
             // txtModelo
             // 
             txtModelo.AutoSuggestFormula = false;
             txtModelo.DisabledBackColor = SystemColors.Window;
             txtModelo.EnabledBackColor = SystemColors.Window;
-            txtModelo.Location = new Point(296, 266);
+            txtModelo.Location = new Point(296, 178);
             txtModelo.Name = "txtModelo";
             txtModelo.Size = new Size(224, 38);
             txtModelo.TabIndex = 5;
@@ -126,7 +102,7 @@
             gradientLabel3.BeforeTouchSize = new Size(129, 49);
             gradientLabel3.BorderSides = Border3DSide.Left | Border3DSide.Top | Border3DSide.Right | Border3DSide.Bottom;
             gradientLabel3.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gradientLabel3.Location = new Point(151, 261);
+            gradientLabel3.Location = new Point(151, 173);
             gradientLabel3.Name = "gradientLabel3";
             gradientLabel3.Size = new Size(129, 49);
             gradientLabel3.TabIndex = 4;
@@ -138,7 +114,7 @@
             gradientLabel4.BeforeTouchSize = new Size(129, 46);
             gradientLabel4.BorderSides = Border3DSide.Left | Border3DSide.Top | Border3DSide.Right | Border3DSide.Bottom;
             gradientLabel4.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gradientLabel4.Location = new Point(151, 331);
+            gradientLabel4.Location = new Point(151, 243);
             gradientLabel4.Name = "gradientLabel4";
             gradientLabel4.Size = new Size(129, 46);
             gradientLabel4.TabIndex = 6;
@@ -151,7 +127,7 @@
             btnRegistar.FlatAppearance.BorderSize = 0;
             btnRegistar.FlatStyle = FlatStyle.Flat;
             btnRegistar.ForeColor = Color.White;
-            btnRegistar.Location = new Point(423, 827);
+            btnRegistar.Location = new Point(423, 739);
             btnRegistar.Name = "btnRegistar";
             btnRegistar.Size = new Size(122, 46);
             btnRegistar.TabIndex = 8;
@@ -176,7 +152,7 @@
             gridViewModelos.Location = new Point(657, 100);
             gridViewModelos.Name = "gridViewModelos";
             gridViewModelos.RowHeadersWidth = 51;
-            gridViewModelos.Size = new Size(803, 763);
+            gridViewModelos.Size = new Size(803, 685);
             gridViewModelos.TabIndex = 10;
             // 
             // groupBox1
@@ -188,9 +164,9 @@
             groupBox1.Controls.Add(gradientLabel5);
             groupBox1.Controls.Add(gradientLabel6);
             groupBox1.Controls.Add(gradientLabel7);
-            groupBox1.Location = new Point(126, 441);
+            groupBox1.Location = new Point(126, 353);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(419, 349);
+            groupBox1.Size = new Size(419, 380);
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             groupBox1.Text = "Configurar Lugares";
@@ -225,11 +201,11 @@
             // 
             // btnOk
             // 
-            btnOk.BackColor = Color.Navy;
+            btnOk.BackColor = Color.DarkGoldenrod;
             btnOk.FlatAppearance.BorderSize = 0;
             btnOk.FlatStyle = FlatStyle.Flat;
             btnOk.ForeColor = Color.White;
-            btnOk.Location = new Point(324, 286);
+            btnOk.Location = new Point(324, 316);
             btnOk.Name = "btnOk";
             btnOk.Size = new Size(70, 46);
             btnOk.TabIndex = 29;
@@ -279,7 +255,7 @@
             txtCapacidade.DisabledBackColor = SystemColors.Window;
             txtCapacidade.Enabled = false;
             txtCapacidade.EnabledBackColor = SystemColors.Window;
-            txtCapacidade.Location = new Point(296, 338);
+            txtCapacidade.Location = new Point(296, 250);
             txtCapacidade.Name = "txtCapacidade";
             txtCapacidade.ReadOnly = true;
             txtCapacidade.Size = new Size(88, 38);
@@ -291,7 +267,7 @@
             btnEditar.FlatAppearance.BorderSize = 0;
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.ForeColor = Color.White;
-            btnEditar.Location = new Point(1466, 765);
+            btnEditar.Location = new Point(1466, 687);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(122, 46);
             btnEditar.TabIndex = 13;
@@ -305,7 +281,7 @@
             btnApagar.FlatAppearance.BorderSize = 0;
             btnApagar.FlatStyle = FlatStyle.Flat;
             btnApagar.ForeColor = Color.White;
-            btnApagar.Location = new Point(1466, 817);
+            btnApagar.Location = new Point(1466, 739);
             btnApagar.Name = "btnApagar";
             btnApagar.Size = new Size(122, 46);
             btnApagar.TabIndex = 30;
@@ -329,8 +305,6 @@
             Controls.Add(gradientLabel4);
             Controls.Add(txtModelo);
             Controls.Add(gradientLabel3);
-            Controls.Add(txtMarca);
-            Controls.Add(gradientLabel2);
             Controls.Add(lblId);
             Controls.Add(gradientLabel1);
             Font = new Font("Gadugi", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -350,9 +324,7 @@
         private Syncfusion.Windows.Forms.Tools.BorderLayout borderLayout1;
         private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel1;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblId;
-        private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel2;
         private Syncfusion.Windows.Forms.Tools.ContextMenuStripEx contextMenuStripEx1;
-        private Syncfusion.Windows.Forms.Grid.GridAwareTextBox txtMarca;
         private Syncfusion.Windows.Forms.Grid.GridAwareTextBox txtModelo;
         private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel3;
         private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel4;

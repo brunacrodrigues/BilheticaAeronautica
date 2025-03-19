@@ -1,4 +1,4 @@
-﻿namespace LibraryAeronautica
+﻿namespace LibraryAeronautica.Modelos
 {
     /// <summary>
     /// Representa um cliente.

@@ -33,8 +33,6 @@
             gradientLabel4 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             txtModelo = new Syncfusion.Windows.Forms.Grid.GridAwareTextBox();
             gradientLabel3 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
-            txtMarca = new Syncfusion.Windows.Forms.Grid.GridAwareTextBox();
-            gradientLabel2 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             LblId = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientLabel1 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             groupBox1 = new GroupBox();
@@ -68,7 +66,7 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Gadugi", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(538, 862);
+            btnGuardar.Location = new Point(538, 775);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(122, 46);
             btnGuardar.TabIndex = 18;
@@ -81,7 +79,7 @@
             gradientLabel4.BeforeTouchSize = new Size(129, 46);
             gradientLabel4.BorderSides = Border3DSide.Left | Border3DSide.Top | Border3DSide.Right | Border3DSide.Bottom;
             gradientLabel4.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gradientLabel4.Location = new Point(118, 364);
+            gradientLabel4.Location = new Point(118, 277);
             gradientLabel4.Name = "gradientLabel4";
             gradientLabel4.Size = new Size(129, 46);
             gradientLabel4.TabIndex = 16;
@@ -93,7 +91,7 @@
             txtModelo.AutoSuggestFormula = false;
             txtModelo.DisabledBackColor = SystemColors.Window;
             txtModelo.EnabledBackColor = SystemColors.Window;
-            txtModelo.Location = new Point(263, 299);
+            txtModelo.Location = new Point(263, 212);
             txtModelo.Name = "txtModelo";
             txtModelo.Size = new Size(224, 38);
             txtModelo.TabIndex = 15;
@@ -103,34 +101,12 @@
             gradientLabel3.BeforeTouchSize = new Size(129, 49);
             gradientLabel3.BorderSides = Border3DSide.Left | Border3DSide.Top | Border3DSide.Right | Border3DSide.Bottom;
             gradientLabel3.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gradientLabel3.Location = new Point(118, 294);
+            gradientLabel3.Location = new Point(118, 207);
             gradientLabel3.Name = "gradientLabel3";
             gradientLabel3.Size = new Size(129, 49);
             gradientLabel3.TabIndex = 14;
             gradientLabel3.Text = "Modelo";
             gradientLabel3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // txtMarca
-            // 
-            txtMarca.AutoSuggestFormula = false;
-            txtMarca.DisabledBackColor = SystemColors.Window;
-            txtMarca.EnabledBackColor = SystemColors.Window;
-            txtMarca.Location = new Point(263, 219);
-            txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(224, 38);
-            txtMarca.TabIndex = 13;
-            // 
-            // gradientLabel2
-            // 
-            gradientLabel2.BeforeTouchSize = new Size(129, 49);
-            gradientLabel2.BorderSides = Border3DSide.Left | Border3DSide.Top | Border3DSide.Right | Border3DSide.Bottom;
-            gradientLabel2.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gradientLabel2.Location = new Point(118, 214);
-            gradientLabel2.Name = "gradientLabel2";
-            gradientLabel2.Size = new Size(129, 49);
-            gradientLabel2.TabIndex = 12;
-            gradientLabel2.Text = "Marca";
-            gradientLabel2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // LblId
             // 
@@ -163,7 +139,7 @@
             groupBox1.Controls.Add(gradientLabel6);
             groupBox1.Controls.Add(gradientLabel7);
             groupBox1.Font = new Font("Gadugi", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(105, 450);
+            groupBox1.Location = new Point(105, 363);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(419, 366);
             groupBox1.TabIndex = 20;
@@ -254,7 +230,7 @@
             txtCapacidade.DisabledBackColor = SystemColors.Window;
             txtCapacidade.Enabled = false;
             txtCapacidade.EnabledBackColor = SystemColors.Window;
-            txtCapacidade.Location = new Point(263, 372);
+            txtCapacidade.Location = new Point(263, 285);
             txtCapacidade.Name = "txtCapacidade";
             txtCapacidade.ReadOnly = true;
             txtCapacidade.Size = new Size(88, 38);
@@ -269,13 +245,12 @@
             checkBoxEstado.TabIndex = 22;
             checkBoxEstado.Text = "none";
             checkBoxEstado.UseVisualStyleBackColor = true;
-            
             // 
             // FormEditarAviao
             // 
             AutoScaleDimensions = new SizeF(13F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(719, 946);
+            ClientSize = new Size(719, 851);
             Controls.Add(checkBoxEstado);
             Controls.Add(txtCapacidade);
             Controls.Add(groupBox1);
@@ -284,8 +259,6 @@
             Controls.Add(gradientLabel4);
             Controls.Add(txtModelo);
             Controls.Add(gradientLabel3);
-            Controls.Add(txtMarca);
-            Controls.Add(gradientLabel2);
             Controls.Add(LblId);
             Controls.Add(gradientLabel1);
             Font = new Font("Gadugi", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -304,8 +277,6 @@
         private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel4;
         private Syncfusion.Windows.Forms.Grid.GridAwareTextBox txtModelo;
         private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel3;
-        private Syncfusion.Windows.Forms.Grid.GridAwareTextBox txtMarca;
-        private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel2;
         private Syncfusion.Windows.Forms.Tools.AutoLabel LblId;
         private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel1;
         private GroupBox groupBox1;

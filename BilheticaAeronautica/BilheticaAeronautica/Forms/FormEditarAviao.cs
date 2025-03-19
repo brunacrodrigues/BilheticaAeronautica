@@ -1,7 +1,5 @@
-﻿using LibraryAeronautica;
-using System.Data;
-using LibraryAeronautica.Enums;
-using System.DirectoryServices.ActiveDirectory;
+﻿using LibraryAeronautica.Modelos;
+using LibraryAeronautica.Servicos;
 
 namespace BilheticaAeronautica
 {
@@ -26,28 +24,28 @@ namespace BilheticaAeronautica
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (ValidarForm())
+            if (ValidarForm())  
             {
-                _aviao.Marca = txtMarca.Text;
+                
                 _aviao.Modelo = txtModelo.Text;
                 _aviao.FilasExecutivas = (int)comboBoxFilasExecutivas.SelectedItem;
                 _aviao.FilasEconomicas = (int)comboBoxFilasEconomicas.SelectedItem;
                 _aviao.LugaresPorFila = (int)comboBoxLugaresPorFila.SelectedItem;
-                _aviao.GerarLugares();
+                GerarService.GerarLugaresAviao(_aviao);
 
                 if (checkBoxEstado.Checked)
                 {
                     if (!_aviao.Estado)
-                    {                                             
+                    {
                         _aviao.Estado = true;
                         _aviao.GerarEstado();
-                        
+
                     }
                     else
                     {
                         _aviao.Estado = false;
                         _aviao.GerarEstado();
-                    } 
+                    }
                 }
 
 
@@ -67,9 +65,8 @@ namespace BilheticaAeronautica
         private void InitForm()
         {
             LblId.Text = _aviao.Id.ToString();
-            txtMarca.Text = _aviao.Marca;
             txtModelo.Text = _aviao.Modelo;
-            txtCapacidade.Text = _aviao.Capacidade.ToString();
+            txtCapacidade.Text = _aviao.Lugares.Count.ToString();
 
             PrencherComboBoxes();
         }
@@ -88,12 +85,6 @@ namespace BilheticaAeronautica
         private bool ValidarForm()
         {
             bool output = true;
-
-            if (string.IsNullOrEmpty(txtMarca.Text))
-            {
-                MessageBox.Show("Insira a marca do avião.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                output = false;
-            }
 
             if (string.IsNullOrEmpty(txtModelo.Text))
             {

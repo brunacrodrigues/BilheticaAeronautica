@@ -1,6 +1,6 @@
 ﻿using LibraryAeronautica.Enums;
 
-namespace LibraryAeronautica
+namespace LibraryAeronautica.Modelos
 {
     /// <summary>
     /// Representa um bilhete.
@@ -15,7 +15,7 @@ namespace LibraryAeronautica
         /// <summary>
         /// O voo associado ao bilhete.
         /// </summary>
-        public  Voo Voo { get; set; }
+        public Voo Voo { get; set; }
 
         /// <summary>
         /// O lugar associado ao bilhete.
@@ -30,7 +30,8 @@ namespace LibraryAeronautica
         /// <summary>
         /// O cliente associado ao bilhete.
         /// </summary>
-        public Cliente Cliente { get; set; }
+        public Cliente Cliente { get; set; }     
+
 
     }
 }

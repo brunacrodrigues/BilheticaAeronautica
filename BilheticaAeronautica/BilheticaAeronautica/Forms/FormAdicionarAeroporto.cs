@@ -1,4 +1,4 @@
-﻿using LibraryAeronautica;
+﻿using LibraryAeronautica.Modelos;
 
 namespace BilheticaAeronautica
 {
@@ -6,11 +6,10 @@ namespace BilheticaAeronautica
     {
         List<Aeroporto> Aeroportos;
 
-        public FormAdicionarAeroporto()
+        public FormAdicionarAeroporto(List<Aeroporto> aeroportos)
         {
             InitializeComponent();
-            Aeroportos = new List<Aeroporto>();
-
+            Aeroportos = aeroportos;
             lblId.Text = (Aeroportos.Count + 1).ToString();
             PreencherListBox();
         }

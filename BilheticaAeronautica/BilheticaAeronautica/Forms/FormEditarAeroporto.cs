@@ -1,4 +1,4 @@
-﻿using LibraryAeronautica;
+﻿using LibraryAeronautica.Modelos;
 
 namespace BilheticaAeronautica
 {

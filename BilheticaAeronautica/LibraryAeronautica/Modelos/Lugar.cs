@@ -1,6 +1,6 @@
 ﻿using LibraryAeronautica.Enums;
 
-namespace LibraryAeronautica
+namespace LibraryAeronautica.Modelos
 {
     /// <summary>
     /// Representa um lugar no avião.
@@ -29,8 +29,7 @@ namespace LibraryAeronautica
         {
             get
             {
-                return $"{Fila}{Letra}";
-
+                return $"{Fila}{Letra}, {Tipo}";
             }
         }
     }
