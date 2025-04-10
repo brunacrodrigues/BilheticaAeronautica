@@ -30,8 +30,12 @@ namespace LibraryAeronautica.Modelos
         /// <summary>
         /// O cliente associado ao bilhete.
         /// </summary>
-        public Cliente Cliente { get; set; }     
-
+        public Cliente Cliente { get; set; }    
+        
+        /// <summary>
+        /// O método de pagamento associado ao bilhete.
+        /// </summary>
+        public MetodoPagamento? MetodoPagamento { get; set; }
 
     }
 }

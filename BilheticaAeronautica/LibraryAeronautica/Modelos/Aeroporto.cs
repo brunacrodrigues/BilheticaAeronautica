@@ -29,6 +29,7 @@
         /// </summary>
         public string Pais { get; set; }
 
+       
         public override string ToString()
         {
             return $"{Id}. {IATA} >> {Nome} >> {Cidade}, {Pais}";

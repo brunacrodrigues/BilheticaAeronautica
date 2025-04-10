@@ -10,7 +10,7 @@ namespace LibraryAeronautica.Modelos
         /// <summary>
         /// A fila /representada por um número) onde o lugar se encontra.
         /// </summary>
-        public string Fila { get; set; }
+        public int Fila { get; set; }
 
         public string Letra { get; set; }
 
@@ -25,12 +25,20 @@ namespace LibraryAeronautica.Modelos
         /// </summary>
         public bool Disponivel { get; set; }
 
+        /// <summary>
+        /// O nome do lugar.
+        /// </summary>
         public string Nome
         {
             get
             {
                 return $"{Fila}{Letra}, {Tipo}";
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{Fila}{Letra}";
         }
     }
 }

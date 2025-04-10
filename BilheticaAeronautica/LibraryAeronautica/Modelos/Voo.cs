@@ -11,7 +11,7 @@
         public int Id { get; set; }
 
         /// <summary>
-        /// O número do voo (ex.: TP1234).
+        /// O número do voo (ex.: VA1234).
         /// </summary>
         public string NumeroVoo { get; set; }
 
@@ -36,9 +36,9 @@
         public DateTime DataPartida { get; set; }
 
         /// <summary>
-        /// A data e hora de chegada.
+        /// A hora de partida do voo.
         /// </summary>
-        public DateTime HoraPartida { get; set; }
+        public TimeSpan HoraPartida { get; set; }
 
         /// <summary>
         /// A duração do voo.
@@ -51,6 +51,20 @@
         /// </summary>
         public List<Bilhete> Bilhetes { get; set; }
 
+        /// <summary>
+        /// O código IATA do aeroporto de origem e de destino do voo.
+        /// </summary>
+        public string Viagem
+        {
+            get
+            {
+                return $"{Origem.IATA} -> {Destino.IATA}";
+            }
+        }
+        public override string ToString()
+        {
+            return $"{NumeroVoo} ({Aviao.Modelo}) - {Origem.IATA} -> {Destino.IATA} - {DataPartida:dd/MM/yyyy} {HoraPartida.ToString(@"hh\:mm")}";
+        }
 
 
     }

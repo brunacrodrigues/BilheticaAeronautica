@@ -27,90 +27,19 @@ namespace LibraryAeronautica.Modelos
         /// </summary>
         public List<Lugar> Lugares { get; set; }
 
-        ///// <summary>
-        ///// A capacidade total do avião.
-        ///// </summary>
-        //public int Capacidade
-        //{
-        //    get
-        //    {
-        //        if (Lugares != null)
-        //        {
-        //            return Lugares.Count;
-        //        }
-        //        else
-        //        {
-        //            return 0;
-        //        }
-        //    }
-        //}
-
-        public int FilasExecutivas { get; set; }
-        public int FilasEconomicas { get; set; }
-        public int LugaresPorFila { get; set; }
-
-        //public override string ToString()
-        //{
-        //    return $"{Modelo}";
-        //}
+        /// <summary>
+        /// O número de lugares executivos do avião.
+        /// </summary>
+        public int LugaresExecutivos { get; set; }
 
         /// <summary>
-        /// Gera os lugares no avião com base no número de filas executivas, filas económicas e lugares em cada fila.
+        /// O número de lugares económicos do avião.
         /// </summary>
-        /// <param name="filasExecutivas"></param>
-        /// <param name="filasEconomicas"></param>
-        /// <param name="lugaresPorFila"></param>
-        //public void GerarLugares()
-        //{
-        //    Lugares = new List<Lugar>();
-        //    const string letrasLugares = "ABCDEFGHIJ"; //Máximo 10 lugares por fila
+        public int LugaresEconomicos { get; set; }
 
-        //    // Gerar os lugares para as filas executivas
-        //    for (int fila = 1; fila <= FilasExecutivas; fila++)
-        //    {
-        //        for (int lugar = 0; lugar < LugaresPorFila; lugar++)
-        //        {
-        //            Lugar novoLugar = new Lugar
-        //            {
-        //                Fila = fila.ToString(),
-        //                Letra = letrasLugares[lugar].ToString(),
-        //                Tipo = TipoLugar.Executivo,
-        //                Disponivel = true,
-        //            };
+       
 
-        //            Lugares.Add(novoLugar);
-        //        }
-        //    }            
-
-        //    // Gerar os lugares para as filas económicas
-        //    for (int fila = FilasExecutivas + 1; fila <= FilasExecutivas + FilasEconomicas; fila++)
-        //    {
-        //        for (int lugar = 0; lugar < LugaresPorFila; lugar ++)
-        //        {
-        //            Lugar novoLugar = new Lugar
-        //            {
-        //                Fila = fila.ToString(),
-        //                Letra = letrasLugares[lugar].ToString(),
-        //                Tipo = TipoLugar.Economico,
-        //                Disponivel = true,
-        //            };
-
-        //            Lugares.Add(novoLugar);
-        //        }
-        //    }
-        //}
-
-        public string GerarEstado()
-        {
-            if (Estado)
-            {
-                return $"Ativo";
-            }
-            else
-            {
-                return $"Inativo";
-            }
-        }
+        
 
 
 
